@@ -16,10 +16,6 @@ This is my resit submission for the JavaScript 1 course at Noroff. The task was 
 ## 🔌 API  
 This project uses the Noroff GameHub API.
 
-Authorization headers used in all API requests:  
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRyaW5nOTMiLCJlbWFpbCI6ImFkcmluZzAzNDcyQHN0dWQubm9yb2ZmLm5vIiwiaWF0IjoxNzQ5ODI1NDgyfQ.WD6fHl9drwhyGLLftcHlSZUboexTDRZfVubjP0OoHms  
-X-Noroff-API-Key: 3da5c886-3530-4ebe-82f2-29b07af7606e
-
 ## 🗂 Folder Structure  
 project/  
 ├── index.html  
