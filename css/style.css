@@ -1,0 +1,328 @@
+/* ------------------------
+   1. BASE & GLOBAL STYLES
+------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#23243b 60%,#393b60 100%);
+  color:#e3e8fa;
+  min-height:100vh;
+}
+
+
+/* ------------------------
+   2. HEADER & NAVIGATION
+------------------------ */
+header{
+  background:linear-gradient(90deg,#22243c 75%,#818cf8 100%);
+  color:#fff;
+  padding:1.2rem 2.5rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+header h1{font-weight:800;font-size:2rem;}
+.nav-menu{display:flex;align-items:center;}
+.nav-menu a{
+  color:#fff;
+  margin-left:2rem;
+  font-weight:600;
+  text-decoration:none;
+  padding:0.4rem 1rem;
+  border-radius:4px;
+}
+.nav-menu a:hover,.nav-menu a[aria-current="page"]{
+  background:#818cf8;
+  color:#fff;
+}
+
+
+/* ------------------------
+   3. HERO SECTION
+------------------------ */
+.hero{
+  background:linear-gradient(90deg,#3c4259 0%,#a78bfa 100%);
+  color:#fff;
+  text-align:center;
+  padding:4rem 1rem 3rem 1rem;
+  margin-bottom:2.5rem;
+  border-radius:0 0 32px 32px;
+}
+.hero h2{font-size:2.4rem;font-weight:800;margin-bottom:.5rem;}
+.hero p{font-size:1.1rem;}
+
+
+/* ------------------------
+   4. MAIN & PRODUCT LIST
+------------------------ */
+main{
+  max-width:1200px;
+  margin:0 auto;
+  padding:1rem;
+}
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:2rem;
+}
+.product{
+  background:#2e2f4d;
+  border-radius:18px;
+  padding:1.6rem;
+  box-shadow:0 10px 28px rgba(0,0,0,0.25);
+  text-align:center;
+  transition:transform 0.2s;
+  transform:scale(1.05);
+}
+.product:hover{
+  transform:translateY(-6px) scale(1.07);
+  box-shadow:0 14px 36px rgba(129,140,248,0.4);
+}
+.product img{
+  width:100%;
+  height:255px;
+  object-fit:cover;
+  background:#1e1e2e;
+  border-radius:12px;
+  margin-bottom:0.9rem;
+}
+.product h2{
+  font-size:1.2rem;
+  color:#c7d2fe;
+  margin-bottom:.3rem;
+}
+.product p{margin-bottom:0.5rem;font-weight:500;}
+.product a,.product button{
+  padding:0.6rem 1.4rem;
+  background:linear-gradient(90deg,#818cf8,#a78bfa);
+  color:white;
+  font-weight:600;
+  border:none;
+  border-radius:30px;
+  text-decoration:none;
+  cursor:pointer;
+}
+
+/* ------------------------
+   5. SINGLE PRODUCT PAGE
+------------------------ */
+#product-container{
+  max-width:600px;
+  margin:3rem auto;
+  background:#2e2f4d;
+  border-radius:20px;
+  padding:2rem;
+  text-align:center;
+  box-shadow:0 6px 24px rgba(0,0,0,0.3);
+}
+#product-container img{
+  width:100%;
+  max-height:300px;
+  object-fit:contain;
+  background:#1e1e2e;
+  margin-bottom:1rem;
+  border-radius:14px;
+}
+#product-container h2{
+  font-size:2rem;
+  color:#c7d2fe;
+  margin-bottom:0.5rem;
+}
+#product-container p{font-size:1.1rem;margin-bottom:1.2rem;}
+#product-container button{
+  padding:0.7rem 2rem;
+  background:linear-gradient(90deg,#818cf8,#a78bfa);
+  color:white;
+  border:none;
+  border-radius:30px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* ------------------------
+   6. CART PAGE
+------------------------ */
+#cart-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #2e2f4d;
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+
+#cart-container img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  background: #1e1e2e;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.cart-item {
+  background: #3b3c5e;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.cart-item h3 {
+  font-size: 1.3rem;
+  color: #c7d2fe;
+}
+
+.cart-item p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.remove-btn {
+  margin-top: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: #e11d48;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.duplicate-alert {
+  background: #e11d48;
+  color: white;
+  padding: 0 0.4rem;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}
+
+.cart-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem auto 0 auto;
+  padding: 1.5rem;
+  max-width: 500px;
+  background: #3b3c5e;
+  border-radius: 16px;
+  color: #e3e8fa;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.cart-summary span {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+#checkout-button {
+  padding: 0.8rem 2.5rem;
+  font-size: 1.1rem;
+  background: linear-gradient(90deg, #818cf8, #a78bfa);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+#checkout-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #a78bfa, #818cf8);
+}
+
+/* ------------------------
+   7. FOOTER
+------------------------ */
+footer{
+  background-color:#22243c;
+  color:white;
+  text-align:center;
+  padding:1.2rem;
+  margin-top:2rem;
+  border-radius:24px 24px 0 0;
+}
+
+/* ------------------------
+   8. FILTER
+------------------------ */
+#filter-select {
+  display: block;
+  margin: 0 auto 2.5rem auto;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  background-color: #2e2f4d;
+  color: #e3e8fa;
+  border: 2px solid #818cf8;
+  border-radius: 30px;
+  box-shadow: 0 4px 18px rgba(129, 140, 248, 0.15);
+  appearance: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+#filter-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.4);
+}
+
+/* ------------------------
+   9. RESPONSIVE QUERIES
+------------------------ */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .nav-menu {
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+  .cart-summary {
+    width: 100%;
+    max-width: none;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  #filter-select {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 2.5rem 1rem;
+  }
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .product {
+    padding: 1rem;
+  }
+  .product img {
+    height: 200px;
+  }
+  #checkout-button {
+    width: 100%;
+  }
+}

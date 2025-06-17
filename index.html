@@ -1,1 +1,38 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GameHub | Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <h1>GameHub</h1>
+    <nav class="nav-menu">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="checkout/index.html">Cart</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <h2>Explore Our Games</h2>
+    <p>Top deals, new titles, and gaming adventures.</p>
+  </section>
+  <main>
+    <select id="filter-select">
+  <option value="all">All</option>
+  <option value="action">Action</option>
+  <option value="adventure">Adventure</option>
+  <option value="sports">Sports</option>
+</select>
+    <div id="products" class="product-grid">Loading games...</div>
+  </main>
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 GameHub. All rights reserved.</p>
+    </div>
+  </footer>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
