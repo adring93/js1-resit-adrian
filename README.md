@@ -31,7 +31,7 @@ project/
   └── product.js  
 
 ## 🧠 Development Process  
-All content is fetched dynamically from the API using async/await. No hard-coded product data is used. The site handles API errors with alerts and uses loading states for better UX. Cart functionality is handled entirely with localStorage. Code is modular, formatted, and well-structured. All console.log() statements have been removed before submission.
+All content is fetched dynamically from the API using async/await. No hard-coded product data is used. The site handles API errors with alerts and uses loading states for better UX. Cart functionality is handled entirely with localStorage. Code is modular, formatted, and well-structured. 
 
 ## 📝 Reflection  
 A full written reflection PDF is included in the submission, covering planning, design, development, problems solved, and what I learned.
