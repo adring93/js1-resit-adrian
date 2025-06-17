@@ -1,11 +1,13 @@
 const cartContainer = document.getElementById("cart-container");
-const cartTotal = document.getElementById("cart-total");
+cartContainer.innerHTML = "<p>Loading...</p>";
+
 let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 
 function displayCartItems() {
+  if (!cartContainer) return;
+  
   if (cartItems.length === 0) {
     cartContainer.innerHTML = "<p>Your cart is empty.</p>";
-    cartTotal.innerHTML = "";
     return;
   }
 
@@ -18,7 +20,7 @@ function displayCartItems() {
     html += `
       <div class="product">
         <img src="${item.image.url}" alt="${item.image.alt}">
-        <h2>${item.title} ${duplicateIcon}</h2>
+        <h2>${item.title}${duplicateIcon}</h2>
         <p><strong>Price:</strong> $${usdPrice} USD</p>
         <button class="remove-btn" data-index="${index}">Remove</button>
       </div>
@@ -33,12 +35,14 @@ function displayCartItems() {
   `;
 
   cartContainer.innerHTML = html;
-  document.querySelectorAll(".remove-btn").forEach((btn) =>
+
+  document.querySelectorAll(".remove-btn").forEach(btn =>
     btn.addEventListener("click", removeItem)
   );
-  document.getElementById("checkout-button").addEventListener("click", () => {
-    window.location.href = "confirmation/index.html";
-  });
+  document.getElementById("checkout-button")
+    .addEventListener("click", () => {
+      window.location.href = "confirmation/index.html";
+    });
 }
 
 function removeItem(event) {
@@ -58,6 +62,10 @@ function updateCartCount() {
 function getCartTotal() {
   return cartItems.reduce((sum, item) => sum + item.price / 10, 0).toFixed(2);
 }
+
+window.addEventListener("error", () => {
+  cartContainer.innerHTML = "<p style='color:red;'>Something went wrong. Please try again later.</p>";
+});
 
 displayCartItems();
 updateCartCount();
